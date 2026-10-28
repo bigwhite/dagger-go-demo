@@ -15,4 +15,7 @@ jobs:
         uses: dagger/dagger-for-github@v8.4.0
         with:
           check: "**"
-          version: "latest"  # semver vX.Y.Z
+          # v1.0.0-beta.21：beta 版不在 dl.dagger.io 的 releases 通道，
+          # version: "latest" 只会装到稳定版 0.21.x（读不懂新版 dagger.toml，
+          # 会发现 0 个 check 并静默通过），必须用 commit 走 dev build 通道
+          commit: a7a2e64e853be92728f05aad9dc07bebe63c7448
