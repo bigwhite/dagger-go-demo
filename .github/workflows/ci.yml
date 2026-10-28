@@ -14,5 +14,5 @@ jobs:
       - name: Run checks with Dagger
         uses: dagger/dagger-for-github@v8.4.0
         with:
-          version: "latest"
-          verb: check
+          check: "**"
+          version: "latest"  # semver vX.Y.Z
